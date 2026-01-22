@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhi Dental Clinic | Smile Solution For All</title>
+    <meta name="description"
+        content="Siddhi Dental Clinic - Expert Dental Implants, Root Canal, Teeth Whitening, and Orthodontics.">
+    <link rel="icon" href="images/favion.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* =========================================
+           CUSTOM OVERRIDES & VARIABLES
+           ========================================= */
+        :root {
+            /* BRAND COLORS – DERIVED FROM LOGO */
+            --primary-color: #1E88E5;
+            /* Medical Blue */
+            --primary-dark: #0D47A1;
+            /* Deep Navy */
+            --accent-light: #E3F2FD;
+            /* Soft Sky Blue */
+            --accent-soft: #F5FAFF;
+            /* Section background */
+            --highlight-color: #42A5F5;
+            /* Icon & hover */
+
+            /* TEXT */
+            --text-dark: #1F2933;
+            /* Charcoal */
+            --text-muted: #6B7280;
+
+            /* UI */
+            --radius-card: 18px;
+            --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.08);
+
+            /* TYPOGRAPHY */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+
+        body {
+            font-family: var(--font-body);
+            padding-top: 70px;
+            /* Offset for fixed navbar */
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-dark) !important;
+            margin-right: 15px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+
+
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
+            color: #fff;
+            border-radius: 50px;
+            padding: 12px 32px;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--text-dark);
+            background: var(--primary-dark);
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            margin-top: -70px;
+        }
+
+        .heroSwiper .swiper-slide {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    rgba(13, 71, 161, 0.75),
+                    rgba(30, 136, 229, 0.55));
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .hero-content h3 {
+            color: var(--accent-light);
+        }
+
+        /* Stats Section */
+        #stats {
+            background: linear-gradient(135deg,
+                    var(--primary-dark),
+                    var(--primary-color));
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-item h3 {
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-soft);
+            transition: 0.3s;
+            height: 100%;
+            text-align: center;
+            border: 1px solid #eef2f7;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Why Us */
+        .benefits-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            list-style: none;
+        }
+
+        .benefits-list i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .img-rounded-custom {
+            border-radius: var(--radius-card);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gallery */
+        .gallery-item {
+            display: block;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Accordion (FAQ) */
+        .accordion-item-custom {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .accordion-header-custom {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header-custom i {
+            transition: 0.3s;
+            color: var(--primary-color);
+        }
+
+        .accordion-header-custom.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body-custom {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-body-custom p {
+            padding-bottom: 20px;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .whatsapp-submit-btn {
+            background-color: #25D366;
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .whatsapp-submit-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(0, 128, 128, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background: #0B1C2D;
+            color: #cfd8e3;
+            padding: 60px 0 20px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        footer h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 80px 0;
+        }
+
+        .bg-light-accent {
+            background-color: var(--accent-light);
+        }
+
+        /* Doctor Cards */
+        .doctor-card {
+            background: white;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #eef2f7;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctor-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .doctor-info {
+            padding: 20px;
+        }
+
+        .doctor-name {
+            margin-top: 0;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .doctor-role {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .doctor-meta {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .doctor-meta i {
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="images/icon.webp" alt="Siddhi Dental Clinic" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galleryFancy">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="#contact-section" class="btn btn-custom">Book Appointment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="p-0">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1580821810660-5486b8e980a6?auto=format&fit=crop&w=1920&q=80');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Siddhi Dental Clinic</h1>
+                        <h3>Smile solution for all.</h3>
+                        <a href="#contact-section" class="btn btn-custom mt-3">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1920&q=80');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Advanced Orthodontics</h1>
+                        <h3>Perfecting smiles with modern technology.</h3>
+                        <a href="#services" class="btn btn-custom mt-3">View Treatments</a>
+                    </div>
+                </div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1590424740714-d0880d3ada51?auto=format&fit=crop&w=1920&q=80');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Gentle & Care</h1>
+                        <h3>Implants, Root Canals & Whitening.</h3>
+                        <a href="#contact-section" class="btn btn-custom mt-3">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center g-md-5 gy-5">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid img-rounded-custom" alt="Dental Clinic">
+                </div>
+                <div class="col-lg-6">
+                    <h2>About Siddhi Dental Clinic</h2>
+                    <div style="width: 60px; height: 4px; background: var(--primary-color); margin-bottom: 20px;"></div>
+                    <p>Welcome to Siddhi Dental Clinic, situated in Waghodia Road, Vadodara. We specialize in providing
+                        comprehensive oral care including Dental Implants, Root Canal treatments, and advanced
+                        Orthodontics in a state-of-the-art, hygienic environment.</p>
+                    <p>With a focus on clinical minimalism and patient comfort, our experienced team utilizes the latest
+                        technology to ensure every visit is pain-free and effective.</p>
+                    <a href="#services" class="btn btn-outline-dark rounded-pill mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="doctors" class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Our Doctors</h2>
+                <span class="text-primary text-uppercase fw-bold">Meet Our Specialists</span>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Dr. Ajay Thakkar -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="doctor-card">
+                        <!-- Placeholder/Generic doctor image or provided image if available. Using provided generic style for now -->
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80"
+                            alt="Dr. Ajay Thakkar" class="doctor-img">
+                        <div class="doctor-info">
+                            <h4 class="doctor-name">Dr. Ajay Thakkar</h4>
+                            <p class="doctor-role">BDS - Dentist (14 Years Experience)</p>
+                            <div class="doctor-meta">
+                                <div class="mb-2"><i class="fa-solid fa-clock"></i> Mon - Sat: 10:00 AM - 01:30 PM,
+                                    05:00 PM - 08:30 PM</div>
+                                <div><i class="fa-solid fa-money-bill"></i> Fees: ₹100</div>
+                            </div>
+                            <a href="#contact-section"
+                                class="btn btn-sm btn-outline-secondary w-100 mt-3 rounded-pill">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dr. Udita Mehta -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+                            alt="Dr. Udita Mehta" class="doctor-img">
+                        <div class="doctor-info">
+                            <h4 class="doctor-name">Dr. Udita Mehta</h4>
+                            <p class="doctor-role">BDS, MDS - Orthodontics & Dentofacial Orthopaedics (15 Years
+                                Experience)</p>
+                            <div class="doctor-meta">
+                                <div class="mb-2"><i class="fa-solid fa-clock"></i> Mon - Sat: 10:15 AM - 01:00 PM</div>
+                                <div><i class="fa-solid fa-money-bill"></i> Fees: ₹150</div>
+                            </div>
+                            <a href="#contact-section"
+                                class="btn btn-sm btn-outline-secondary w-100 mt-3 rounded-pill">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="2500">0</h3>
+                        <p>Smiles Restored</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="12">0</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="5.0">0</h3>
+                        <p>Star Rating on Google</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-light-accent">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Our Treatments</h2>
+                <span class="text-primary text-uppercase fw-bold">Comprehensive Procedures</span>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
+                        <h3>Dental Implant Fixing</h3>
+                        <p>Permanent solution for missing teeth with artificial roots.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-teeth service-icon"></i>
+                        <h3>Artificial Teeth</h3>
+                        <p>Custom-made dentures and prosthetics for natural function.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-crown service-icon"></i>
+                        <h3>Crowns and Bridges</h3>
+                        <p>Restoring damaged teeth and bridging gaps effectively.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-tooth service-icon"></i>
+                        <h3>Tooth Extraction</h3>
+                        <p>Safe and painless removal of impacted or damaged teeth.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
+                        <h3>Teeth Reshaping</h3>
+                        <p>Contouring teeth for an even and aesthetically pleasing smile.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-gem service-icon"></i>
+                        <h3>Scaling / Polishing</h3>
+                        <p>Deep cleaning to remove plaque and tartar buildup.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-x-ray service-icon"></i>
+                        <h3>Dental Braces</h3>
+                        <p>Straightening teeth with modern orthodontic solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="container">
+            <div class="row align-items-center g-md-5 gy-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h2>Why Choose Us?</h2>
+                    <p class="mb-4">We combine expertise with empathy to deliver the best dental experience.</p>
+                    <ul class="benefits-list p-0">
+                        <li><i class="fa-solid fa-circle-check"></i> Advanced Technology & Equipment</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pain-Free Root Canal Treatments</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Expert Orthodontic Care</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Strict Sterilization Protocols</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Comfortable & Relaxing Environment</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="https://images.unsplash.com/photo-1758205308181-d52b41e00cef?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid img-rounded-custom" alt="Doctor with Patient">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>What Our Patients Say</h2>
+                <span class="text-primary text-uppercase fw-bold">Real Reviews, Real Smiles</span>
+            </div>
+            <div class="swiper testimonialSwiper pb-5">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4">"The best dental experience I've ever had. The root canal was
+                                painless and the staff was incredibly supportive."</p>
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle"
+                                    width="50" height="50" alt="Sarah">
+                                <div class="text-start">
+                                    <h6 class="mb-0 text-primary">Sarah J.</h6>
+                                    <small class="text-muted">Regular Patient</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4">"My teeth whitening results are amazing! I feel so much more
+                                confident. Highly recommend Rohan Dental Clinic."</p>
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle"
+                                    width="50" height="50" alt="Mike">
+                                <div class="text-start">
+                                    <h6 class="mb-0 text-primary">Mike T.</h6>
+                                    <small class="text-muted">Whitening Client</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4">"Great handling of emergency situations. I was in severe pain and
+                                they saw me immediately."</p>
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle"
+                                    width="50" height="50" alt="Emily">
+                                <div class="text-start">
+                                    <h6 class="mb-0 text-primary">Emily R.</h6>
+                                    <small class="text-muted">Emergency Care</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4">"Great handling of emergency situations. I was in severe pain and
+                                they saw me immediately."</p>
+                            <div class="d-flex align-items-center justify-content-center gap-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle"
+                                    width="50" height="50" alt="Emily">
+                                <div class="text-start">
+                                    <h6 class="mb-0 text-primary">Emily R.</h6>
+                                    <small class="text-muted">Emergency Care</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleryFancy">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Our Gallery</h2>
+                <span class="text-primary text-uppercase fw-bold">A Glimpse of Our Clinic</span>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80"
+                            alt="Equipment">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1643660527206-c1c50a40a1eb?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1643660527206-c1c50a40a1eb?auto=format&fit=crop&w=400&q=80"
+                            alt="Tools">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=400&q=80"
+                            alt="Smile">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=400&q=80"
+                            alt="Reception">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=400&q=80"
+                            alt="Dentist">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&w=1200&q=80"
+                        data-fancybox="gallery" class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&w=400&q=80"
+                            alt="Interior">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="bg-light-accent">
+        <div class="container">
+            <div class="row g-md-5 gy-5">
+
+                <div class="col-lg-7">
+                    <div class="pe-lg-4">
+                        <h2 class="mb-2">Frequently Asked Questions</h2>
+                        <span class="text-primary text-uppercase fw-bold d-block mb-4">Common Patient Queries</span>
+
+                        <div class="accordion-custom">
+                            <div class="accordion-item-custom">
+                                <button class="accordion-header-custom">
+                                    Do you accept dental insurance?
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-body-custom">
+                                    <p>Yes, we accept most major insurance plans. Please contact our front desk with
+                                        your policy details so we can verify your coverage prior to your appointment.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-custom">
+                                <button class="accordion-header-custom">
+                                    Is the teeth whitening procedure painful?
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-body-custom">
+                                    <p>Most patients experience zero to minimal sensitivity. We use protective gels to
+                                        ensure your gums are safe during the procedure.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-custom">
+                                <button class="accordion-header-custom">
+                                    Do you treat children?
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-body-custom">
+                                    <p>Absolutely! We provide pediatric dental care including sealants, fluoride
+                                        treatments, and routine checkups in a friendly environment.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-custom">
+                                <button class="accordion-header-custom">
+                                    What should I do in a dental emergency?
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-body-custom">
+                                    <p>Contact us immediately. We keep slots open for emergency cases every day. If you
+                                        have severe swelling or trauma, please visit the ER if we are unavailable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-form-wrapper">
+                        <h3>Quick Appointment Inquiry</h3>
+                        <p class="mb-3 text-muted" style="font-size: 0.9rem;">Fill details below to send us a direct
+                            WhatsApp message.</p>
+
+                        <form id="dental-whatsapp-form">
+                            <div class="mb-3">
+                                <label for="w-name" class="form-label fw-bold small">Patient Name *</label>
+                                <input type="text" id="w-name" class="form-control" placeholder="Enter your name"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="w-phone" class="form-label fw-bold small">Phone Number *</label>
+                                <input type="tel" id="w-phone" class="form-control" placeholder="Your contact number"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="w-treatment" class="form-label fw-bold small">Treatment Type</label>
+                                <select id="w-treatment" class="form-select">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Dental Implant Fixing">Dental Implant Fixing</option>
+                                    <option value="Artificial Teeth">Artificial Teeth</option>
+                                    <option value="Crowns and Bridges">Crowns and Bridges</option>
+                                    <option value="Tooth Extraction">Tooth Extraction</option>
+                                    <option value="Teeth Reshaping">Teeth Reshaping</option>
+                                    <option value="Scaling / Polishing">Scaling / Polishing</option>
+                                    <option value="Dental Braces">Dental Braces</option>
+                                    <option value="Emergency Pain">Emergency Pain</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="w-message" class="form-label fw-bold small">Message (Optional)</label>
+                                <textarea id="w-message" class="form-control" rows="3"
+                                    placeholder="Preferred date or specific concern..."></textarea>
+                            </div>
+
+                            <button type="submit" class="whatsapp-submit-btn">
+                                <i class="fa-brands fa-whatsapp me-2"></i> Send Inquiry via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-3 text-white fs-4 fw-bold d-flex align-items-center">
+                        <img src="images/icon.webp" alt="Logo" style="filter: brightness(0) invert(1);" height="100">
+                    </div>
+                    <p>Providing top-tier dental care including implants, root canals, and orthodontics. Your smile is
+                        our passion.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#galleryFancy">Gallery</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Contact Us</h3>
+                    <ul class="d-flex flex-column gap-3">
+                        <li class="d-flex gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <span>G-6, Siddhi dental clinic, Amidarshan shopping center, Parivar Char Rasta, Waghodia
+                                Rd, Vadodara-390019</span>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="fa-solid fa-phone mt-1 text-primary"></i>
+                            <a href="tel:+919930368534" class="text-decoration-none">
+                                +91 99303 68534
+                            </a>
+                        </li>
+
+                        <!-- <li class="d-flex gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-primary"></i>
+                            <span>info@siddhidental.com</span>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3>Book Now</h3>
+                    <p>Ready for a brighter smile? Schedule your visit today.</p>
+                    <a href="#contact-section" class="btn btn-custom w-100">Make Reservation</a>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-5 pt-3 text-center">
+                <p class="mb-0 small">&copy; <span id="currunt-year"></span> Siddhi Dental Clinic. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Swiper - Hero
+            const heroSwiper = new Swiper(".heroSwiper", {
+                loop: true,
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+
+                // 1. Set default (mobile) to DISABLED
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                    enabled: false,
+                },
+
+                breakpoints: {
+                    // 2. Enable navigation for screens 768px (md) and wider
+                    768: {
+                        navigation: {
+                            enabled: true,
+                        },
+                    },
+                },
+            });
+
+            // 2. Swiper - Testimonials
+            const testimonialSwiper = new Swiper(".testimonialSwiper", {
+                loop: true,
+                spaceBetween: 30,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                breakpoints: {
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 2 },
+                },
+            });
+
+            // 3. Fancybox Gallery
+            Fancybox.bind("[data-fancybox]", {
+                Carousel: { infinite: false },
+                hideScrollbar: true,
+            });
+
+            // 4. Custom Accordion Logic
+            const accordions = document.querySelectorAll('.accordion-header-custom');
+            accordions.forEach(acc => {
+                acc.addEventListener('click', function () {
+                    // Close others
+                    accordions.forEach(item => {
+                        if (item !== this && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                            item.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+                    // Toggle Current
+                    this.classList.toggle('active');
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // 5. Stats Counter
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const isFloat = counter.getAttribute('data-target').includes('.');
+                        let count = 0;
+                        const update = () => {
+                            count += target / 100;
+                            if (count < target) {
+                                counter.innerText = isFloat ? count.toFixed(1) : Math.ceil(count);
+                                requestAnimationFrame(update);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        update();
+                        obs.unobserve(counter);
+                    }
+                });
+            });
+            document.querySelectorAll('.counter').forEach(c => observer.observe(c));
+
+            // 6. WhatsApp Form Logic
+            const whatsappNumber = "916354710794";
+            function isMobileDevice() {
+                return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+            const form = document.getElementById('dental-whatsapp-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('w-name').value.trim();
+                    const phone = document.getElementById('w-phone').value.trim();
+                    const treatment = document.getElementById('w-treatment').value;
+                    const userMsg = document.getElementById('w-message').value.trim();
+
+                    let finalMessage = `*New Appointment Inquiry* %0a`;
+                    finalMessage += `--------------------------- %0a`;
+                    finalMessage += `*Name:* ${name} %0a`;
+                    finalMessage += `*Phone:* ${phone} %0a`;
+                    finalMessage += `*Treatment:* ${treatment} %0a`;
+
+                    if (userMsg) {
+                        finalMessage += `*Note:* ${userMsg} %0a`;
+                    }
+
+                    const encodedMessage = encodeURIComponent(finalMessage).replace(/%250a/g, '%0a');
+                    let url;
+                    if (isMobileDevice()) {
+                        url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${finalMessage}`;
+                    } else {
+                        url = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${finalMessage}`;
+                    }
+                    window.open(url, '_blank');
+                });
+            }
+        });
+    </script>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currunt-year').innerText = currentYear;
+    </script>
+</body>
+
+</html>
